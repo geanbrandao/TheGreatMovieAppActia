@@ -9,6 +9,16 @@
         android:id="@+id/moviesFragment"
         android:name="br.com.geanbrandao.thegreatmovieapp.actia.presentation.movies.MoviesFragment"
         android:label="fragment_movies"
-        tools:layout="@layout/fragment_movies" />
+        tools:layout="@layout/fragment_movies" >
+        <action
+            android:id="@+id/action_moviesFragment_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="br.com.geanbrandao.thegreatmovieapp.actia.presentation.movieDetails.MovieDetailsFragment"
+        android:label="fragment_movie_details"
+        tools:layout="@layout/fragment_movie_details" />
 
 </navigation>
