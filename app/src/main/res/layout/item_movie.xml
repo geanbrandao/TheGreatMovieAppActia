@@ -3,7 +3,7 @@
     android:id="@+id/cv_movie"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="@dimen/padding_extra_small"
+    android:layout_marginVertical="@dimen/padding_1"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="@dimen/corner_card_view"
     xmlns:tools="http://schemas.android.com/tools">
@@ -29,7 +29,7 @@
             android:orientation="vertical"
             android:background="@color/white"
             android:elevation="2dp"
-            android:padding="@dimen/padding_small"
+            android:padding="@dimen/padding_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
