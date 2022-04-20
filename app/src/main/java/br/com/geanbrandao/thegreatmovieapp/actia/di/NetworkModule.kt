@@ -1,7 +1,7 @@
 package br.com.geanbrandao.thegreatmovieapp.actia.di
 
-import br.com.geanbrandao.thegreatmovieapp.actia.data.remote.ApiService
-import br.com.geanbrandao.thegreatmovieapp.actia.utils.Constants.BASE_URL
+import br.com.geanbrandao.thegreatmovieapp.actia.data.remote.MoviesApiService
+import br.com.geanbrandao.thegreatmovieapp.actia.utils.Constants.BASE_URL_MOVIES
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -20,8 +20,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(client: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+    fun provideRetrofitMovies(client: OkHttpClient): Retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL_MOVIES)
         .client(client)
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
         .build()
@@ -40,5 +40,6 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApi(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
+    fun provideApiMovies(retrofit: Retrofit): MoviesApiService =
+        retrofit.create(MoviesApiService::class.java)
 }
