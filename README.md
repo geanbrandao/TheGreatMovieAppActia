@@ -21,4 +21,7 @@ The App was written using the Android Studio Bumblebee Version 2021.1.1 patch 2,
 Using the built-in 11 Java version SDK.
 The used gradle version is also the built-in on the Android Studio Version.
 
-The app can be executed from the master branch.  
+The app can be executed from the master branch.
+
+## The project link
+https://github.com/geanbrandao/TheGreatMovieAppActia
