@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.geanbrandao.thegreatmovieapp.actia.R
 import br.com.geanbrandao.thegreatmovieapp.actia.databinding.ItemMovieBinding
 import br.com.geanbrandao.thegreatmovieapp.actia.domain.model.ResultModel
-import br.com.geanbrandao.thegreatmovieapp.actia.utils.Constants
+import br.com.geanbrandao.thegreatmovieapp.actia.utils.Constants.BASE_URL_IMAGES
+import br.com.geanbrandao.thegreatmovieapp.actia.utils.extensions.toYearDate
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 
@@ -43,11 +44,11 @@ class MoviesAdapter(
 
         fun bind(item: ResultModel) = with(binding) {
             tvName.text = item.title
-            tvReleaseYear.text = item.releaseDate
+            tvReleaseYear.text = item.releaseDate.toYearDate()
             Glide.with(itemView.context)
-                .load(Constants.BASE_URL_IMAGES.plus(item.posterPath))
+                .load(BASE_URL_IMAGES.plus(item.posterPath))
                 .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-                .placeholder(R.drawable.ic_broken_image)
+                .placeholder(R.drawable.ic_movie)
                 .into(ivMovie)
         }
     }

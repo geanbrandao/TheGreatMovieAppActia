@@ -1,6 +1,8 @@
-package br.com.geanbrandao.thegreatmovieapp.actia.utils
+package br.com.geanbrandao.thegreatmovieapp.actia.utils.extensions
 
+import br.com.geanbrandao.thegreatmovieapp.actia.utils.State
 import br.com.geanbrandao.thegreatmovieapp.actia.utils.errors.AuthenticationException
+import br.com.geanbrandao.thegreatmovieapp.actia.utils.errors.NetworkErrorException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
