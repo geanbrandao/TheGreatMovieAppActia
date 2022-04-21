@@ -1,16 +1,18 @@
 package br.com.geanbrandao.thegreatmovieapp.actia.domain.model
 
+import com.google.gson.annotations.SerializedName
+
 data class MovieDetailsModel(
-    val backdropPath: String?,
+    @SerializedName("backdrop_path") val backdropPath: String?,
     val budget: Int,
     val genres: List<GenreModel>,
     val id: Int,
-    val originalTitle: String,
+    @SerializedName("original_title") val originalTitle: String,
     val overview: String?,
-    val posterPath: String?,
-    val releaseDate: String,
+    @SerializedName("poster_path") val posterPath: String?,
+    @SerializedName("release_date") val releaseDate: String,
     val revenue: Int,
     val status: String, // todo this could be an enum
     val title: String,
-    val voteAverage: Double
+    @SerializedName("vote_average") val voteAverage: Double
 )

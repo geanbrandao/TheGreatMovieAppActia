@@ -11,7 +11,7 @@ interface MoviesApiService {
     suspend fun getDiscoverMovie(@Query("api_key") apiKey: String): DiscoverModel
 
     @GET(MOVIE_DETAILS)
-    suspend fun getMovieDetails(@Path("id") id: Int): MovieDetailsModel
+    suspend fun getMovieDetails(@Query("api_key") apiKey: String, @Path("id") id: Int): MovieDetailsModel
 
     companion object {
         private const val DISCOVER = "discover"

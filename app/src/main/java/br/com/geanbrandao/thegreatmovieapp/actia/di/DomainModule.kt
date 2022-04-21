@@ -4,6 +4,7 @@ import br.com.geanbrandao.thegreatmovieapp.actia.data.remote.MoviesApiService
 import br.com.geanbrandao.thegreatmovieapp.actia.data.repository.MoviesRepository
 import br.com.geanbrandao.thegreatmovieapp.actia.domain.repository.MoviesRepositoryImpl
 import br.com.geanbrandao.thegreatmovieapp.actia.domain.useCases.DiscoverMoviesUseCase
+import br.com.geanbrandao.thegreatmovieapp.actia.domain.useCases.MovieDetailsUseCase
 import br.com.geanbrandao.thegreatmovieapp.actia.domain.useCases.MoviesUseCase
 import dagger.Module
 import dagger.Provides
@@ -25,7 +26,8 @@ object DomainModule {
     @Singleton
     fun provideMoviesUseCase(repository: MoviesRepository): MoviesUseCase {
         return MoviesUseCase(
-            DiscoverMoviesUseCase(repository = repository)
+            DiscoverMoviesUseCase(repository = repository),
+            MovieDetailsUseCase(repository = repository)
         )
     }
 }
