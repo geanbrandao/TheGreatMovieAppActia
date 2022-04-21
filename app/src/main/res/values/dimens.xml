@@ -7,6 +7,8 @@
 
     <dimen name="corner_card_view">8dp</dimen>
 
-    <dimen name="margin_default">8dp</dimen>
+    <dimen name="margin_1">8dp</dimen>
+    <dimen name="margin_5">48dp</dimen>
+
     <dimen name="height_section">50dp</dimen>
 </resources>
