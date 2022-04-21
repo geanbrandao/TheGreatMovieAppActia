@@ -1,8 +1,8 @@
-package br.com.geanbrandao.thegreatmovieapp.actia.presentation.movies
+package br.com.geanbrandao.thegreatmovieapp.actia.presentation.movieDetails
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.geanbrandao.thegreatmovieapp.actia.domain.model.DiscoverModel
+import br.com.geanbrandao.thegreatmovieapp.actia.domain.model.MovieDetailsModel
 import br.com.geanbrandao.thegreatmovieapp.actia.domain.useCases.MoviesUseCase
 import br.com.geanbrandao.thegreatmovieapp.actia.utils.State
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,17 +13,17 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 @HiltViewModel
-class MoviesViewModel @Inject constructor(
+class MovieDetailsViewModel @Inject constructor(
     private val moviesUseCase: MoviesUseCase
 ): ViewModel() {
 
     private var job: Job? = null
-    val movies = MutableStateFlow<State<DiscoverModel>>(State.LoadingState(isLoading = true))
+    val movieDetails = MutableStateFlow<State<MovieDetailsModel>>(State.LoadingState(isLoading = true))
 
-    fun getDiscoverMovies() {
-        job = moviesUseCase.discoverMoviesUseCase()
+    fun getMovieDetails(id: Int) {
+        job = moviesUseCase.movieDetailsUseCase(id)
             .onEach {
-                movies.value = it
+                movieDetails.value = it
             }.launchIn(viewModelScope)
     }
 

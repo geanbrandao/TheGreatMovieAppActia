@@ -1,19 +1,15 @@
 package br.com.geanbrandao.thegreatmovieapp.actia.presentation.movies
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.isVisible
-import androidx.core.widget.ImageViewCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import br.com.geanbrandao.thegreatmovieapp.actia.R
 import br.com.geanbrandao.thegreatmovieapp.actia.databinding.FragmentMoviesBinding
 import br.com.geanbrandao.thegreatmovieapp.actia.domain.model.DiscoverModel
 import br.com.geanbrandao.thegreatmovieapp.actia.utils.State
@@ -23,7 +19,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class MoviesFragment : Fragment() {
 
     private val adapter: MoviesAdapter = MoviesAdapter(onClickListener = {
-        findNavController().navigate(R.id.action_moviesFragment_to_movieDetailsFragment)
+        val action = MoviesFragmentDirections.actionMoviesFragmentToMovieDetailsFragment(movie = it)
+        findNavController().navigate(action)
     })
 
     private val binding: FragmentMoviesBinding by lazy {

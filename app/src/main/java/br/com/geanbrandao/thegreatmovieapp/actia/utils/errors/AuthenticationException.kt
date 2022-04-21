@@ -1,6 +1,5 @@
 package br.com.geanbrandao.thegreatmovieapp.actia.utils.errors
 
-import br.com.geanbrandao.thegreatmovieapp.actia.utils.NetworkErrorException
 import org.json.JSONObject
 import retrofit2.HttpException
 

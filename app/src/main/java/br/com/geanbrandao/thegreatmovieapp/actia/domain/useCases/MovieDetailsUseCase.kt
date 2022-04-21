@@ -7,14 +7,13 @@ import javax.inject.Inject
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 
-class DiscoverMoviesUseCase @Inject constructor(
-    private val repository: MoviesRepository
-) {
-    operator fun invoke() = flow {
+class MovieDetailsUseCase @Inject constructor(private val repository: MoviesRepository) {
+
+    operator fun invoke(id: Int) = flow {
         emit(State.LoadingState(isLoading = true))
         delay(1000)
         try {
-            emit(State.DataState(repository.getDiscoverMovies()))
+            emit(State.DataState(repository.getMovieDetails(id)))
         } catch (e: Exception) {
             // todo create logFile
             emit(e.resolveError())

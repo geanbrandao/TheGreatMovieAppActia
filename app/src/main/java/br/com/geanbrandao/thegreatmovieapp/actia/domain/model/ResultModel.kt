@@ -1,6 +1,7 @@
 package br.com.geanbrandao.thegreatmovieapp.actia.domain.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class ResultModel(
     @SerializedName("backdrop_path") val backdropPath: String,
@@ -13,4 +14,4 @@ data class ResultModel(
     @SerializedName("release_date") val releaseDate: String,
     @SerializedName("title") val title: String,
     @SerializedName("vote_average") val voteAverage: Double,
-)
+): Serializable

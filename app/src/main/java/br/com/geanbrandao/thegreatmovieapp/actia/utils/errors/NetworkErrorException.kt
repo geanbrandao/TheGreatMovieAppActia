@@ -1,4 +1,4 @@
-package br.com.geanbrandao.thegreatmovieapp.actia.utils
+package br.com.geanbrandao.thegreatmovieapp.actia.utils.errors
 
 import org.json.JSONObject
 import retrofit2.HttpException
