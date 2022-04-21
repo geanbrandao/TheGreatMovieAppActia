@@ -2,7 +2,7 @@ package br.com.geanbrandao.thegreatmovieapp.actia.domain.useCases
 
 import br.com.geanbrandao.thegreatmovieapp.actia.data.repository.MoviesRepository
 import br.com.geanbrandao.thegreatmovieapp.actia.utils.State
-import br.com.geanbrandao.thegreatmovieapp.actia.utils.resolveError
+import br.com.geanbrandao.thegreatmovieapp.actia.utils.extensions.resolveError
 import javax.inject.Inject
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
