@@ -9,5 +9,5 @@ import javax.inject.Inject
 
 class MoviesRepositoryImpl @Inject constructor(private val api: MoviesApiService) : MoviesRepository {
     override suspend fun getDiscoverMovies(): DiscoverModel = api.getDiscoverMovie(API_KEY)
-    override suspend fun getMovieDetails(id: Int): MovieDetailsModel = api.getMovieDetails(API_KEY, id)
+    override suspend fun getMovieDetails(id: Int): MovieDetailsModel = api.getMovieDetails(id, API_KEY)
 }

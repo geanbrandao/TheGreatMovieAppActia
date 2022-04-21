@@ -36,8 +36,9 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_backdrop"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:scaleType="center"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -52,7 +53,7 @@
                 app:layout_constraintTop_toBottomOf="@id/iv_backdrop" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/ll_directors_name"
+                android:id="@+id/ll_status"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_section"
                 android:layout_marginTop="@dimen/margin_1"
@@ -62,20 +63,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/divider">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_directors_name_label"
+                    android:id="@+id/tv_status_label"
                     style="@style/text_section_default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:text="Director's name" />
+                    android:text="@string/fragment_movie_details_status_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_directors_name"
+                    android:id="@+id/tv_status"
                     style="@style/text_section_default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:text="Quentin Tarantino" />
+                    tools:text="Released" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -95,7 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:text="Movie score" />
+                    android:text="@string/fragment_movie_details_movie_score_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_score"
@@ -105,35 +106,35 @@
                     android:drawablePadding="@dimen/padding_1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     app:drawableEndCompat="@drawable/ic_stars"
-                    android:text="8.2" />
+                    tools:text="8.2" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/ll_release_year"
+                android:id="@+id/ll_release_date"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_section"
                 android:layout_marginTop="@dimen/margin_1"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_directors_name">
+                app:layout_constraintTop_toBottomOf="@+id/ll_status">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_release_year_label"
+                    android:id="@+id/tv_release_date_label"
                     style="@style/text_section_default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:text="Release year" />
+                    android:text="@string/fragment_movie_details_release_date_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_release_year"
+                    android:id="@+id/tv_release_date"
                     style="@style/text_section_default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:text="2022" />
+                    tools:text="2022-03-03" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -153,7 +154,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:text="Duration" />
+                    android:text="@string/fragment_movie_details_duration_label" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_duration"
@@ -161,7 +162,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:text="01:00:45" />
+                    tools:text="@string/fragment_movie_details_duration" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -171,7 +172,7 @@
                 android:layout_height="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ll_release_year" />
+                app:layout_constraintTop_toBottomOf="@id/ll_release_date" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_description_label"
@@ -183,7 +184,7 @@
                 app:layout_constraintTop_toBottomOf="@id/divider_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="Overview" />
+                android:text="@string/fragment_movie_details_overview_label" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_description"
@@ -194,10 +195,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_description_label"
-                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+                tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    <include
+        android:id="@+id/component_info"
+        layout="@layout/component_info"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

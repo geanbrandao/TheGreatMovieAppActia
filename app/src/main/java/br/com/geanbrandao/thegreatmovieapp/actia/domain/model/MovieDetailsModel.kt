@@ -12,6 +12,7 @@ data class MovieDetailsModel(
     @SerializedName("poster_path") val posterPath: String?,
     @SerializedName("release_date") val releaseDate: String,
     val revenue: Int,
+    val runtime: Int,
     val status: String, // todo this could be an enum
     val title: String,
     @SerializedName("vote_average") val voteAverage: Double

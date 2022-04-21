@@ -21,7 +21,7 @@ class MoviesViewModel @Inject constructor(
     val movies = MutableStateFlow<State<DiscoverModel>>(State.LoadingState(isLoading = true))
 
     fun getDiscoverMovies() {
-        moviesUseCase.discoverMoviesUseCase()
+        job = moviesUseCase.discoverMoviesUseCase()
             .onEach {
                 movies.value = it
             }.launchIn(viewModelScope)

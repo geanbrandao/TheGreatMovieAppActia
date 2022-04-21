@@ -5,4 +5,10 @@
     <string name="fragment_movies_label_header">Some movies for you</string>
     <string name="button_text_try_again">Try Again</string>
     <string name="component_info_title_error">Something got wrong</string>
+    <string name="fragment_movie_details_status_label">Status</string>
+    <string name="fragment_movie_details_duration">%s min</string>
+    <string name="fragment_movie_details_release_date_label">Release date</string>
+    <string name="fragment_movie_details_movie_score_label">Movie score</string>
+    <string name="fragment_movie_details_duration_label">Duration</string>
+    <string name="fragment_movie_details_overview_label">Overview</string>
 </resources>
