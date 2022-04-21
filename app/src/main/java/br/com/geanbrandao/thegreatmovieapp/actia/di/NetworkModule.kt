@@ -28,14 +28,13 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(headerInterceptor: Interceptor): OkHttpClient =
+    fun provideOkHttpClient(): OkHttpClient =
         OkHttpClient().newBuilder().apply {
             addInterceptor(
                 HttpLoggingInterceptor().apply {
                     level = HttpLoggingInterceptor.Level.BODY
                 }
             )
-            addInterceptor(headerInterceptor)
         }.build()
 
     @Provides

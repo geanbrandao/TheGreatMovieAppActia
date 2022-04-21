@@ -18,7 +18,7 @@ class NetworkErrorException(
         fun parseException(e: HttpException): NetworkErrorException {
             val errorBody = e.response()?.errorBody()?.string()
             return try {
-                NetworkErrorException(e.code(), JSONObject(errorBody!!).getString("message"))
+                NetworkErrorException(e.code(), JSONObject(errorBody!!).getString("status_message"))
             } catch (_: Exception) {
                 NetworkErrorException(e.code(), "Unexpected error!!ً")
             }

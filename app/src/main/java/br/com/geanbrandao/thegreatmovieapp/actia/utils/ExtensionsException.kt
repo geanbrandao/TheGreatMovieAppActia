@@ -21,8 +21,8 @@ fun Exception.resolveError(): State.ErrorState {
         is HttpException -> {
             when (this.code()) {
                 502 -> NetworkErrorException(this.code(),  "Internal server error!")
-                401 -> AuthenticationException(this.code(), "Authentication error!")
-                400 -> NetworkErrorException.parseException(this)
+                401 -> AuthenticationException.parseException(this)
+                404 -> NetworkErrorException.parseException(this)
                 else -> this
             }
         }

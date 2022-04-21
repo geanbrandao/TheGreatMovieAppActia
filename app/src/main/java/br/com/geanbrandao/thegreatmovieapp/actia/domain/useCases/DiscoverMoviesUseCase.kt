@@ -4,6 +4,7 @@ import br.com.geanbrandao.thegreatmovieapp.actia.data.repository.MoviesRepositor
 import br.com.geanbrandao.thegreatmovieapp.actia.utils.State
 import br.com.geanbrandao.thegreatmovieapp.actia.utils.resolveError
 import javax.inject.Inject
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 
 class DiscoverMoviesUseCase @Inject constructor(
@@ -11,6 +12,7 @@ class DiscoverMoviesUseCase @Inject constructor(
 ) {
     operator fun invoke() = flow {
         emit(State.LoadingState(isLoading = true))
+        delay(1000)
         try {
             emit(State.DataState(repository.getDiscoverMovies()))
         } catch (e: Exception) {
